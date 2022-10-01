@@ -1,16 +1,16 @@
 ﻿Console.Clear();
 Console.WriteLine("Введите через пробел элементы массива строк:");
 string phrase =Console.ReadLine();
-string[] strings=phrase.Split(' ');
+string[] startArray=phrase.Split(' ');
 
 void PrintArray (string[] array){
 Console.Write("[");
 foreach (var word in array){
 Console.Write($"'{word}' ");}
 }
-PrintArray(strings);
+PrintArray(startArray);
 Console.Write("] -> ");
-PrintArray(NewArray(strings));
+PrintArray(NewArray(startArray));
 Console.Write("]");
 
 string [] NewArray (string[] strings){
