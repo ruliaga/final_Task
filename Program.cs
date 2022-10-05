@@ -13,12 +13,21 @@ Console.Write("] -> ");
 PrintArray(NewArray(startArray));
 Console.Write("]");
 
-string [] NewArray (string[] strings){
+
+string[]  NewArray (string[] strings){
    
-Random rnd=new Random();
-string [] newArray = new string[rnd.Next(0,3)];
-for (int i=0; i<newArray.Length;i++){
-    newArray[i]=strings[rnd.Next(0,strings.Length)];
+
+int sum=0;
+for (int i=0; i<strings.Length;i++){
+    if (strings[i].Length<=3){sum=sum+1;}    
+}
+int j=0;
+string [] newArray = new string[sum];
+    for (int i=0; i<strings.Length;i++){
+        if (strings[i].Length<=3){
+            newArray[j]=strings[i];
+            j++;
+        }
 }
 return newArray;
 }
